@@ -32,7 +32,6 @@ Acercar el conocimiento informático a personas de todas las edades y reducir la
 | **Seguridad** | BCrypt para cifrado de contraseñas |
 | **Validaciones** | JetBrains Annotations (`@NotNull`, `@Nullable`) |
 | **Control de versiones** | Git 2.51.1.1 + GitHub |
-| **Metodología** | Scrum (sprints semanales) |
 
 ---
 
