@@ -2,6 +2,10 @@ module com.example.eduquiz {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
+    requires javafx.media;
+
+    requires java.sql; // Para MariaDB (JDBC)
+    requires org.jetbrains.annotations; // JetBrains @NotNull, etc.
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
