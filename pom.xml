@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -25,7 +24,7 @@
 
     <dependencies>
 
-        <!-- JavaFX -->
+        <!-- JavaFX (Maven descargará automáticamente las librerías nativas según el SO) -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -52,7 +51,7 @@
             <version>${javafx.version}</version>
         </dependency>
 
-        <!-- Librerías visuales adicionales -->
+        <!-- Librerías visuales -->
         <dependency>
             <groupId>org.controlsfx</groupId>
             <artifactId>controlsfx</artifactId>
@@ -89,21 +88,21 @@
             <version>17.3</version>
         </dependency>
 
-        <!-- MariaDB JDBC -->
+        <!-- Base de datos MariaDB -->
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
             <version>${mariadb.version}</version>
         </dependency>
 
-        <!-- BCrypt -->
+        <!-- Seguridad: BCrypt -->
         <dependency>
             <groupId>at.favre.lib</groupId>
             <artifactId>bcrypt</artifactId>
             <version>${bcrypt.version}</version>
         </dependency>
 
-        <!-- JetBrains Annotations -->
+        <!-- Validaciones JetBrains -->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
@@ -123,7 +122,7 @@
     <build>
         <plugins>
 
-            <!-- Compilador con soporte Java 25 -->
+            <!-- Compilador para Java 25 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -133,7 +132,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Plugin de ejecución JavaFX -->
+            <!-- Plugin de ejecución JavaFX completamente portable -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -142,6 +141,7 @@
                     <mainClass>com.example.eduquiz.HelloApplication</mainClass>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
@@ -151,12 +151,9 @@
             <url>https://repo.maven.apache.org/maven2</url>
         </repository>
         <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/repositories/releases/</url>
-        </repository>
-        <repository>
             <id>openjfx-repo</id>
             <url>https://maven.openjfx.io</url>
         </repository>
     </repositories>
+
 </project>
