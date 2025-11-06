@@ -10,8 +10,16 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        // Carga la pantalla de login (asegúrate que exista en /resources/fxml/login.fxml)
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+        // Carga el archivo FXML desde el classpath
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("/fxml/login.fxml"));
+
+        if (loader.getLocation() == null) {
+            System.err.println("No se encontró /fxml/login.fxml en el classpath");
+            System.err.println("Classpath: " + System.getProperty("java.class.path"));
+            return;
+        }
+
+        Parent root = loader.load();
         Scene scene = new Scene(root, 600, 400);
         stage.setTitle("EduQuiz - Inicio de sesión");
         stage.setScene(scene);
@@ -19,7 +27,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        launch(args);
+        launch();
     }
 }
-

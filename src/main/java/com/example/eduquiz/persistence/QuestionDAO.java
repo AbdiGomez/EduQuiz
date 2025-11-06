@@ -29,7 +29,7 @@ public class QuestionDAO {
                 ));
             }
         } catch (SQLException e) {
-            System.err.println("❌ Error al obtener preguntas: " + e.getMessage());
+            System.err.println("Error al obtener preguntas: " + e.getMessage());
         }
         return questions;
     }

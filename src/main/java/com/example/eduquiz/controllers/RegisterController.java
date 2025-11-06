@@ -29,19 +29,19 @@ public class RegisterController {
         String confirmPassword = confirmPasswordField.getText();
 
         if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-            statusLabel.setText("⚠️ Todos los campos son obligatorios.");
+            statusLabel.setText("Todos los campos son obligatorios.");
             return;
         }
 
         if (!password.equals(confirmPassword)) {
-            statusLabel.setText("❌ Las contraseñas no coinciden.");
+            statusLabel.setText("Las contraseñas no coinciden.");
             return;
         }
 
         boolean success = authService.register(username, email, password);
 
         if (success) {
-            statusLabel.setText("✅ Registro exitoso. Redirigiendo al login...");
+            statusLabel.setText("Registro exitoso. Redirigiendo al login...");
 
             // Usamos un hilo para no congelar la interfaz
             new Thread(() -> {
@@ -54,7 +54,7 @@ public class RegisterController {
             }).start();
 
         } else {
-            statusLabel.setText("❌ Error al registrar usuario. Correo ya existente.");
+            statusLabel.setText("Error al registrar usuario. Correo ya existente.");
         }
     }
 

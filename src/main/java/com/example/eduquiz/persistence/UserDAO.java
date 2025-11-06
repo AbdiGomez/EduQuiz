@@ -24,10 +24,10 @@ public class UserDAO {
             stmt.setString(3, user.getPasswordHash());
             stmt.setInt(4, user.getCurrentLevel());
             stmt.executeUpdate();
-            System.out.println("✅ Usuario creado correctamente: " + user.getUsername());
+            System.out.println("Usuario creado correctamente: " + user.getUsername());
             return true;
         } catch (SQLException e) {
-            System.err.println("❌ Error al crear usuario: " + e.getMessage());
+            System.err.println("Error al crear usuario: " + e.getMessage());
             return false;
         }
     }

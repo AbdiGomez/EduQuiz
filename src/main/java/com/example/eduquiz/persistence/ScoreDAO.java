@@ -17,9 +17,9 @@ public class ScoreDAO {
             stmt.setInt(2, score.getLevelId());
             stmt.setInt(3, score.getScore());
             stmt.executeUpdate();
-            System.out.println("✅ Puntaje guardado correctamente.");
+            System.out.println("Puntaje guardado correctamente.");
         } catch (SQLException e) {
-            System.err.println("❌ Error al guardar puntaje: " + e.getMessage());
+            System.err.println("Error al guardar puntaje: " + e.getMessage());
         }
     }
 }

@@ -26,13 +26,13 @@ public class LoginController {
         String password = passwordField.getText().trim();
 
         if (email.isEmpty() || password.isEmpty()) {
-            statusLabel.setText("⚠️ Ingresa tu correo y contraseña.");
+            statusLabel.setText("Ingresa tu correo y contraseña.");
             return;
         }
 
         User user = authService.login(email, password);
         if (user != null) {
-            statusLabel.setText("✅ Bienvenido, " + user.getUsername() + "!");
+            statusLabel.setText("Bienvenido, " + user.getUsername() + "!");
             try {
                 // Cargar el juego (quiz.fxml)
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/quiz.fxml"));
@@ -42,10 +42,10 @@ public class LoginController {
                 stage.setTitle("EduQuiz - Nivel " + user.getCurrentLevel());
             } catch (Exception e) {
                 e.printStackTrace();
-                statusLabel.setText("❌ Error al abrir el juego.");
+                statusLabel.setText("Error al abrir el juego.");
             }
         } else {
-            statusLabel.setText("❌ Credenciales incorrectas.");
+            statusLabel.setText("Credenciales incorrectas.");
         }
     }
 

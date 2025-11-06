@@ -1,34 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.eduquiz.controllers.RegisterController"
-            prefWidth="420.0" prefHeight="420.0"
-            style="-fx-background-color: linear-gradient(to bottom right, #4A90E2, #9013FE);">
+<AnchorPane prefHeight="420.0" prefWidth="420.0" style="-fx-background-color: linear-gradient(to bottom right, #4A90E2, #9013FE);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eduquiz.controllers.RegisterController">
 
-    <VBox alignment="CENTER" spacing="10" layoutX="50" layoutY="40">
-        <Label text="Registro de Usuario" style="-fx-font-size: 20px; -fx-text-fill: white;"/>
+    <VBox alignment="CENTER" layoutX="85.0" layoutY="61.0" spacing="10">
+        <Label style="-fx-font-size: 20px; -fx-text-fill: white;" text="Registro de Usuario" />
 
-        <TextField fx:id="usernameField" promptText="Nombre de usuario" maxWidth="250"/>
-        <TextField fx:id="emailField" promptText="Correo electrónico" maxWidth="250"/>
-        <PasswordField fx:id="passwordField" promptText="Contraseña" maxWidth="250"/>
-        <PasswordField fx:id="confirmPasswordField" promptText="Confirmar contraseña" maxWidth="250"/>
+        <TextField fx:id="usernameField" maxWidth="280.0" prefHeight="25.0" prefWidth="280.0" promptText="Nombre de usuario" />
+        <TextField fx:id="emailField" maxWidth="286.0" prefHeight="25.0" prefWidth="286.0" promptText="Correo electrónico" />
+        <PasswordField fx:id="passwordField" maxWidth="283.0" prefHeight="25.0" prefWidth="283.0" promptText="Contraseña" VBox.vgrow="NEVER" />
+        <PasswordField fx:id="confirmPasswordField" maxWidth="322.0" prefHeight="25.0" prefWidth="228.0" promptText="Confirmar contraseña" VBox.vgrow="NEVER" />
 
-        <Button fx:id="registerButton"
-                text="Registrarse"
-                prefWidth="250"
-                onAction="#onRegister"
-                style="-fx-background-color: #3DDC84; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button fx:id="registerButton" onAction="#onRegister" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #3DDC84; -fx-text-fill: white; -fx-font-weight: bold;" text="Registrarse" />
 
-        <Button fx:id="backToLoginButton"
-                text="← Volver al inicio de sesión"
-                onAction="#onBackToLogin"
-                style="-fx-background-color: transparent; -fx-text-fill: white; -fx-underline: true;"/>
+        <Button fx:id="backToLoginButton" onAction="#onBackToLogin" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-underline: true;" text="← Volver al inicio de sesión" />
 
-        <Label fx:id="statusLabel" textFill="white" wrapText="true" maxWidth="280" />
+        <Label fx:id="statusLabel" maxWidth="280" textFill="white" wrapText="true" />
     </VBox>
 
 </AnchorPane>

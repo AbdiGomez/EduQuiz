@@ -138,7 +138,7 @@
                 </configuration>
             </plugin>
 
-            <!-- 🔥 Plugin JavaFX -->
+            <!-- Plugin JavaFX -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>

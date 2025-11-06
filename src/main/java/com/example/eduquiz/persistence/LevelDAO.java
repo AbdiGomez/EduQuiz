@@ -24,7 +24,7 @@ public class LevelDAO {
                 ));
             }
         } catch (SQLException e) {
-            System.err.println("❌ Error al obtener niveles: " + e.getMessage());
+            System.err.println("Error al obtener niveles: " + e.getMessage());
         }
         return levels;
     }

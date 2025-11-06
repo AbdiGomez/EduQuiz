@@ -18,6 +18,7 @@ public class QuizController {
     @FXML private RadioButton optionD;
     @FXML private Button nextButton;
     @FXML private Label feedbackLabel;
+    @FXML private ToggleGroup optionsGroup;
 
     private List<Question> questions;
     private int currentIndex = 0;
@@ -26,9 +27,14 @@ public class QuizController {
 
     @FXML
     public void initialize() {
-        // Por defecto cargamos el nivel 1
+        // Cargar nivel 1 por defecto
         questions = questionDAO.getQuestionsByLevel(1);
-        if (!questions.isEmpty()) showQuestion();
+        if (!questions.isEmpty()) {
+            showQuestion();
+        } else {
+            feedbackLabel.setText("No hay preguntas disponibles.");
+            nextButton.setDisable(true);
+        }
     }
 
     private void showQuestion() {
@@ -39,22 +45,28 @@ public class QuizController {
         optionC.setText(q.getOptionC());
         optionD.setText(q.getOptionD());
         feedbackLabel.setText("");
+
+        // Limpiar selección previa
+        optionsGroup.selectToggle(null);
     }
 
     @FXML
     void onNextQuestion() {
         Question q = questions.get(currentIndex);
-        String selected = "";
-        if (optionA.isSelected()) selected = optionA.getText();
-        else if (optionB.isSelected()) selected = optionB.getText();
-        else if (optionC.isSelected()) selected = optionC.getText();
-        else if (optionD.isSelected()) selected = optionD.getText();
+
+        RadioButton selectedBtn = (RadioButton) optionsGroup.getSelectedToggle();
+        if (selectedBtn == null) {
+            feedbackLabel.setText("Debes seleccionar una opción.");
+            return;
+        }
+
+        String selected = selectedBtn.getText();
 
         if (selected.equals(q.getCorrectAnswer())) {
             score += 10;
-            feedbackLabel.setText("✅ Correcto!");
+            feedbackLabel.setText("Correcto!");
         } else {
-            feedbackLabel.setText("❌ Incorrecto. Respuesta: " + q.getCorrectAnswer());
+            feedbackLabel.setText("Incorrecto. Respuesta: " + q.getCorrectAnswer());
         }
 
         currentIndex++;
@@ -62,7 +74,7 @@ public class QuizController {
             showQuestion();
         } else {
             feedbackLabel.setText("Fin del nivel. Puntuación: " + score);
-            new ScoreDAO().saveScore(new Score(1, q.getLevelId(), score)); // ← ejemplo con user_id=1
+            new ScoreDAO().saveScore(new Score(1, q.getLevelId(), score)); // ejemplo con user_id = 1
             nextButton.setDisable(true);
         }
     }
