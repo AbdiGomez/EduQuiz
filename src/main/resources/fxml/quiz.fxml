@@ -1,21 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="237.0" prefWidth="366.0" spacing="10" style="-fx-padding: 20;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.eduquiz.controllers.QuizController">
+<VBox fx:id="rootPane"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.eduquiz.controllers.QuizController"
+      alignment="CENTER"
+      prefHeight="500.0"
+      prefWidth="600.0"
+      spacing="15"
+      style="-fx-background-color: linear-gradient(to bottom right, #f5f7fa, #eef6f1); -fx-padding: 24;">
 
-    <Label fx:id="questionLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;" wrapText="true" />
+    <!-- DEFINICIÓN REAL DEL TOGGLEGROUP  -->
+    <fx:define>
+        <ToggleGroup fx:id="optionsGroup"/>
+    </fx:define>
 
-    <RadioButton fx:id="optionA" text="Opción A">
-      <toggleGroup>
-         <ToggleGroup fx:id="optionsGroup" />
-      </toggleGroup></RadioButton>
-    <RadioButton fx:id="optionB" text="Opción B" toggleGroup="$optionsGroup" />
-    <RadioButton fx:id="optionC" text="Opción C" toggleGroup="$optionsGroup" />
-    <RadioButton fx:id="optionD" text="Opción D" toggleGroup="$optionsGroup" />
+    <!-- ETIQUETA DEL NIVEL -->
+    <Label fx:id="levelLabel"
+           text="Nivel 1"
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
 
-    <Label fx:id="feedbackLabel" textFill="blue" />
-    <Button fx:id="nextButton" onAction="#onNextQuestion" text="Siguiente" />
+    <!-- CONTADOR DE PREGUNTA -->
+    <Label fx:id="questionCounterLabel"
+           text="Pregunta 1 / X"
+           style="-fx-font-size: 14px; -fx-text-fill: #2c3e50;" />
+
+    <!-- CONTENEDOR DEL TIMER -->
+    <VBox fx:id="timerBox"
+          alignment="CENTER"
+          spacing="5"
+          visible="false">
+        <Label text="Tiempo restante:"
+               style="-fx-font-size: 14px; -fx-text-fill: #2c3e50;" />
+
+        <ProgressBar fx:id="timerBar"
+                     prefWidth="300"
+                     progress="1.0"/>
+
+        <!-- SECONDS LABEL: obligatorio para el controlador -->
+        <Label fx:id="timerLabel"
+               text=""
+               style="-fx-font-size: 14px; -fx-text-fill: #2c3e50;" />
+    </VBox>
+
+    <!-- PREGUNTA -->
+    <Label fx:id="questionLabel"
+           wrapText="true"
+           text="La pregunta aparecerá aquí"
+           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495e;"
+           maxWidth="500" />
+
+    <!-- OPCIONES -->
+    <VBox spacing="12" maxWidth="450">
+
+        <RadioButton fx:id="optionA"
+                     toggleGroup="$optionsGroup"
+                     text="Opción A"
+                     style="-fx-font-size: 16px; -fx-padding: 12;
+                            -fx-background-color: white;
+                            -fx-border-color: #90caf9;
+                            -fx-border-radius: 12;
+                            -fx-background-radius: 12;
+                            -fx-border-width: 2;" />
+
+        <RadioButton fx:id="optionB"
+                     toggleGroup="$optionsGroup"
+                     text="Opción B"
+                     style="-fx-font-size: 16px; -fx-padding: 12;
+                            -fx-background-color: white;
+                            -fx-border-color: #90caf9;
+                            -fx-border-radius: 12;
+                            -fx-background-radius: 12;
+                            -fx-border-width: 2;" />
+
+        <RadioButton fx:id="optionC"
+                     toggleGroup="$optionsGroup"
+                     text="Opción C"
+                     style="-fx-font-size: 16px; -fx-padding: 12;
+                            -fx-background-color: white;
+                            -fx-border-color: #90caf9;
+                            -fx-border-radius: 12;
+                            -fx-background-radius: 12;
+                            -fx-border-width: 2;" />
+
+        <RadioButton fx:id="optionD"
+                     toggleGroup="$optionsGroup"
+                     text="Opción D"
+                     style="-fx-font-size: 16px; -fx-padding: 12;
+                            -fx-background-color: white;
+                            -fx-border-color: #90caf9;
+                            -fx-border-radius: 12;
+                            -fx-background-radius: 12;
+                            -fx-border-width: 2;" />
+
+    </VBox>
+
+    <!-- FEEDBACK -->
+    <Label fx:id="feedbackLabel"
+           textFill="blue"
+           style="-fx-font-size: 16px; -fx-font-weight: bold;"
+           wrapText="true"
+           maxWidth="500" />
+
+    <!-- BOTONES -->
+    <HBox alignment="CENTER" spacing="15">
+
+        <Button fx:id="nextButton"
+                text="Siguiente"
+                onAction="#onNextClick"
+                style="-fx-font-size: 14px; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 10;" />
+
+        <Button fx:id="exitButton"
+                text="Salir del juego"
+                visible="false"
+                onAction="#onExitClick"
+                style="-fx-font-size: 14px; -fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 10;" />
+
+    </HBox>
 
 </VBox>
+
+
+
+
+
+
+
+
+
+

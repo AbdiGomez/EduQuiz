@@ -1,0 +1,79 @@
+/* ---------- Answer card (tarjeta) ---------- */
+.answer-card {
+    -fx-background-color: white;
+    -fx-padding: 14 16;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(38,50,56,0.12), 8, 0, 0, 4);
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 10;
+}
+.answer-card:hover {
+    -fx-background-color: #e8f5ff;
+    -fx-effect: dropshadow(gaussian, rgba(38,50,56,0.22), 10, 0, 0, 6);
+}
+
+/* Radio texto dentro de card (mezcla visual) */
+.answer-radio {
+    -fx-font-size: 16px;
+    -fx-text-fill: #263238;
+}
+
+/* ---------- Botones ---------- */
+.btn-next {
+    -fx-font-size: 15px;
+    -fx-background-color: linear-gradient(#2ecc71, #27ae60);
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-padding: 10 22;
+    -fx-effect: dropshadow(gaussian, rgba(39,174,96,0.25), 8, 0, 0, 4);
+    -fx-cursor: hand;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    -fx-transition: all 150ms ease-in;
+}
+.btn-next:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* Exit button */
+.btn-exit {
+    -fx-font-size: 15px;
+    -fx-background-color: linear-gradient(#ff5252, #e53935);
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-padding: 10 22;
+    -fx-effect: dropshadow(gaussian, rgba(229,57,53,0.28), 8, 0, 0, 4);
+    -fx-cursor: hand;
+}
+
+/* ---------- Progress bar (timer) - base ---------- */
+.progress-bar {
+    -fx-background-color: transparent;
+    -fx-background-radius: 6;
+    -fx-accent: #00acc1; /* fallback */
+    -fx-pref-height: 14px;
+}
+
+/* color variations will be applied inline via controller (setStyle) */
+
+/* ---------- Alerts (dialog) ---------- */
+.dialog-pane {
+    -fx-background-color: linear-gradient(to bottom right, #ffffff, #f6f9fc);
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 16;
+}
+.dialog-pane .content.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #263238;
+}
+.dialog-pane .header-panel .label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #1e293b;
+    -fx-font-weight: bold;
+}
+
+/* ---------- Animaciones CSS util (no JS) ---------- */
+/* We use JS transitions for shake; CSS handles hover & scale */
