@@ -1,4 +1,4 @@
-# EduQuiz — Juego Educativo Multinivel con Registro de Base de Datos status
+# EduQuiz — Juego educativo multinivel con registro de base de datos y estatus
 
 **EduQuiz** es un videojuego educativo desarrollado en **Java (JavaFX + MariaDB)** cuyo objetivo es fomentar el aprendizaje de la informática de manera **lúdica e interactiva**, promoviendo la alfabetización digital y la comprensión de conceptos tecnológicos a través de la gamificación.
 
