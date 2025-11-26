@@ -2,7 +2,7 @@
 
 ## 1. Especificación General del Proyecto
 
-**EduQuiz** es un videojuego educativo desarrollado en **Java (JavaFX + MariaDB)**. Su objetivo es fomentar el aprendizaje de la informática de manera lúdica e interactiva, utilizando una plataforma multinivel de preguntas y respuestas. El sistema registra el progreso, los puntajes y la información de los usuarios en una base de datos MariaDB.
+**EduQuiz** es un videojuego educativo desarrollado en **Java (JavaFX + MariaDB)**. Su proposito es fomentar el aprendizaje de la informática de manera lúdica e interactiva, utilizando una plataforma multinivel de preguntas y respuestas. El sistema registra el progreso, los puntajes y la información de los usuarios en una base de datos MariaDB.
 
 ### 1.1 Objetivos Principales
 
@@ -86,3 +86,9 @@ La aplicación requiere el **Java Runtime Environment (JRE)** para su ejecución
 
 ---
 `Documento generado: 22 de Noviembre de 2025`
+
+
+
+All Rights Reserved
+Copyright (c) 2025 Abdiel Miguel Gomez Aleman
+This project and its source code may not be copied, reproduced, modified, distributed, or used in any form without explicit written permission from the author.
