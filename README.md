@@ -85,10 +85,10 @@ La aplicación requiere el **Java Runtime Environment (JRE)** para su ejecución
     ```
 
 ---
-`Documento generado: 22 de Noviembre de 2025`
 
 
-
-All Rights Reserved
-Copyright (c) 2025 Abdiel Miguel Gomez Aleman
-This project and its source code may not be copied, reproduced, modified, distributed, or used in any form without explicit written permission from the author.
+***
+**Aviso Legal y Derechos de Autor**
+All Rights Reserved <br>
+Copyright (c) 2025 Abdiel Miguel Gomez Aleman, Yahir Campos Martinez, Abisai Blas Diaz, y Luis Alexis Lucho Hernandez <br>
+This project and its source code may not be copied, reproduced, modified, distributed, or used in any form without explicit written permission from the authors.
