@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="rootPane"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.eduquiz.controllers.QuizController"
+      spacing="20"
+      alignment="TOP_CENTER"
+      style="-fx-background-color: #C7EAFE;">
+
+    <!-- ✔ Ahora SÍ se declara correctamente -->
+    <fx:define>
+        <ToggleGroup fx:id="optionsGroup"/>
+    </fx:define>
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <!-- TÍTULO NIVEL -->
+    <Label fx:id="levelLabel"
+           text="Nivel 1"
+           style="-fx-font-size: 30px; -fx-font-weight: bold;" />
+
+    <!-- PREGUNTA -->
+    <Label fx:id="questionCounterLabel"
+           text="Pregunta 1/5"
+           style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+
+    <Label fx:id="questionLabel"
+           wrapText="true"
+           maxWidth="600"
+           style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+    <!-- TIMER -->
+    <VBox fx:id="timerBox" spacing="5" alignment="CENTER">
+        <ProgressBar fx:id="timerBar"
+                     prefWidth="450"
+                     style="-fx-accent: #00e676; -fx-pref-height: 18px;" />
+        <Label fx:id="timerLabel"
+               text="12s"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+    </VBox>
+
+    <!-- OPCIONES -->
+    <VBox spacing="12" alignment="CENTER_LEFT" maxWidth="650">
+
+        <RadioButton fx:id="optionA"
+                     toggleGroup="$optionsGroup"
+                     onMouseEntered="#onHoverOptionEnter"
+                     onMouseExited="#onHoverOptionExit"
+                     style="-fx-font-size: 20px;" />
+
+        <RadioButton fx:id="optionB"
+                     toggleGroup="$optionsGroup"
+                     onMouseEntered="#onHoverOptionEnter"
+                     onMouseExited="#onHoverOptionExit"
+                     style="-fx-font-size: 20px;" />
+
+        <RadioButton fx:id="optionC"
+                     toggleGroup="$optionsGroup"
+                     onMouseEntered="#onHoverOptionEnter"
+                     onMouseExited="#onHoverOptionExit"
+                     style="-fx-font-size: 20px;" />
+
+        <RadioButton fx:id="optionD"
+                     toggleGroup="$optionsGroup"
+                     onMouseEntered="#onHoverOptionEnter"
+                     onMouseExited="#onHoverOptionExit"
+                     style="-fx-font-size: 20px;" />
+
+    </VBox>
+
+    <!-- FEEDBACK -->
+    <Label fx:id="feedbackLabel"
+           wrapText="true"
+           maxWidth="600"
+           alignment="CENTER"
+           style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+
+    <!-- BOTONES -->
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="nextButton"
+                text="Siguiente"
+                onAction="#onNextClick"
+                style="-fx-font-size: 20px; -fx-padding: 10 25;
+                       -fx-background-color: #2196F3; -fx-text-fill: white;" />
+
+        <Button fx:id="exitButton"
+                text="Salir"
+                visible="false"
+                onAction="#onExitClick"
+                style="-fx-font-size: 20px; -fx-padding: 10 25;
+                       -fx-background-color: #E53935; -fx-text-fill: white;" />
+    </HBox>
+
+</VBox>

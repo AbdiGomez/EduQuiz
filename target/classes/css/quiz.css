@@ -1,0 +1,123 @@
+/* quiz.css - estilos modernos, hover 3D, fondo animado y tarjetas elegantes */
+
+/* Root background animated gradient */
+.root-pane {
+    -fx-padding: 20;
+    -fx-background-color: linear-gradient(to bottom right, #f5f7fa, #eef6f1);
+    -fx-font-family: "Segoe UI", "Roboto", Arial;
+}
+
+.header {
+    -fx-padding: 6 6 0 6;
+    -fx-alignment: center-left;
+}
+
+.level-label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #1f3a93;
+    -fx-font-weight: bold;
+}
+
+.counter-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7b8a96;
+}
+
+/* Timer */
+.timer-box { -fx-padding: 6 0 6 0; }
+.timer-bar {
+    -fx-accent: #2e7d32;
+    -fx-pref-height: 10;
+    -fx-background-insets: 0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+.timer-label { -fx-text-fill: #34495e; -fx-font-weight: bold; }
+
+.question-label {
+    -fx-font-size: 20px;
+    -fx-text-fill: #23303b;
+    -fx-font-weight: 600;
+    -fx-wrap-text: true;
+    -fx-padding: 6 30 6 30;
+}
+
+/* Answer cards */
+.answer-card {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 4);
+    -fx-padding: 12;
+    -fx-cursor: hand;
+    -fx-pref-width: 360;
+    -fx-min-height: 76;
+    -fx-alignment: center-left;
+    -fx-translate-z: 0;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    -fx-transition: all 180ms ease;
+}
+
+/* inner labels */
+.card-letter {
+    -fx-font-size: 14px;
+    -fx-text-fill: #1976d2;
+    -fx-font-weight: 700;
+    -fx-padding: 0 0 0 0;
+}
+.card-text {
+    -fx-font-size: 15px;
+    -fx-text-fill: #34495e;
+}
+
+/* Hover 3D tilt + glow */
+.answer-card:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(gaussian, rgba(25,118,210,0.18), 16, 0, 0, 8);
+    -fx-translate-y: -4;
+    -fx-rotate: 0.5;
+    -fx-transition: all 180ms ease;
+}
+
+/* Selected card (we apply style from controller by adding inline style or styleClass "selected") */
+.answer-card.selected {
+    -fx-background-color: linear-gradient(to right, #e8f5e9, #e3f2fd);
+    -fx-border-color: #64b5f6;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 18, 0, 0, 6);
+}
+
+/* Feedback */
+.feedback-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #1e88e5;
+    -fx-padding: 6 12 6 12;
+}
+
+/* Buttons */
+.btn-primary {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 8 18;
+    -fx-font-weight: bold;
+}
+.btn-primary:hover { -fx-opacity: 0.95; }
+
+.btn-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 8 14;
+}
+
+/* Dialog styling (used by controller dialogs) */
+.dialog-pane {
+    -fx-background-color: linear-gradient(to bottom right, #ffffff, #f9fbff);
+    -fx-font-size: 13px;
+}
+
+

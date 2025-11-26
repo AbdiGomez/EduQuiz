@@ -1,0 +1,14 @@
+fx:controller="com.example.eduquiz.controllers.LoginController"
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.eduquiz.controllers.LoginController">
+    <Label text="Iniciar Sesión" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+    <TextField fx:id="emailField" promptText="Correo electrónico" />
+    <PasswordField fx:id="passwordField" promptText="Contraseña" />
+    <Label fx:id="statusLabel" textFill="red" />
+    <Button text="Iniciar sesión" onAction="#onLogin" />
+    <Button text="Crear cuenta" onAction="#onGoToRegister" />
+</VBox>
